@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  cloudflare-ddns:
+    image: oznu/cloudflare-ddns
+    environment:
+      API_KEY: ${CLOUDFLARE_API_KEY}
+      PROXIED: true
+      ZONE: earlopain.dev
+    restart: unless-stopped
