@@ -17,5 +17,6 @@ alias cp='cp -i'
 alias ifconfig='ip addr'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias mine='sudo chown earlopain:earlopain'
+alias unlock-key='echo "test" | gpg --clearsign > /dev/null'
 
 export GPG_TTY=$(tty)
