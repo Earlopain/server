@@ -1,7 +1,0 @@
-[user]
-        name = Earlopain
-        signingkey = 2B41C3E14D2536AD
-[gpg]
-        program = gpg2
-[init]
-        defaultBranch = master

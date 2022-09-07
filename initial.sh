@@ -21,3 +21,11 @@ gpg --edit-key 2B41C3E14D2536AD
 #> trust
 #> 5
 #> save
+
+# Git config
+git config --global user.signingkey 2B41C3E14D2536AD
+git config --global user.name Earlopain
+echo -n "Git email: "
+read git_email
+git config --global user.email $git_email
+git config --global init.defaultBranch master
