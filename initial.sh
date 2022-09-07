@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+echo "This isn't meant to be run."
+exit
+
 # Docker
 yay docker
 yay docker-compose
