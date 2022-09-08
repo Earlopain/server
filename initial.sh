@@ -3,6 +3,9 @@
 echo "This isn't meant to be run."
 exit
 
+cp ./files/.bashrc ~/.bashrc
+source ~/.bashrc
+
 # Docker
 yay docker
 yay docker-compose
@@ -11,6 +14,8 @@ sudo usermod -aG docker $USER
 # Network
 sudo systemctl stop dhcpcd
 sudo systemctl disable dhcpcd
+sudo cp ./files/resolv.conf /etc/
+sudo cp ./files/enp1s0.conf /etc/systemd/network/
 sudo systemctl enable systemd-networkd
 sudo systemctl start systemd-networkd
 sudo reboot now
