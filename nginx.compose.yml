@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  certbot:
+    image: certbot/dns-cloudflare
+    command: renew
+    volumes:
+      - /home/earlopain/letsencrypt:/etc/letsencrypt
+      - ${PWD}/certbot_secrets.ini:/etc/letsencrypt/secrets.ini
+    profiles:
+      - certbot
+
+  nginx:
+    image: nginx:1.23-alpine
+    container_name: server_nginx
+    ports:
+      - 443:443
+    volumes:
+      - /home/earlopain/letsencrypt:/etc/letsencrypt
+      - ${PWD}/nginx.conf:/etc/nginx/conf.d/nginx.conf
