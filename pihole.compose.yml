@@ -28,7 +28,6 @@ services:
       pihole_network:
         ipv4_address: 192.168.178.51
     environment:
-      TZ: Europe/Berlin
       VIRTUAL_HOST: pihole.server.lan
       WEBPASSWORD: test
       PIHOLE_DNS_: 172.30.9.2#5053
