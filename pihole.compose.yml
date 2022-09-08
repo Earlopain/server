@@ -29,13 +29,13 @@ services:
         ipv4_address: 192.168.178.51
     environment:
       TZ: Europe/Berlin
-      ServerIP: 192.168.178.51
       VIRTUAL_HOST: pihole.server.lan
       WEBPASSWORD: test
       PIHOLE_DNS_: 172.30.9.2#5053
       DNSSEC: true
       DNSMASQ_LISTENING: all
       FTLCONF_DBINTERVAL: 60
+      FTLCONF_REPLY_ADDR4: 192.168.178.51
       DHCP_ACTIVE: true
       DHCP_START: 192.168.178.151
       DHCP_END: 192.168.178.251
