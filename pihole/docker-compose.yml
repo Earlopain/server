@@ -2,7 +2,7 @@ version: "3"
 
 services:
   cloudflared:
-    image: cloudflare/cloudflared
+    image: cloudflare/cloudflared:2022.9.0-amd64
     command: proxy-dns
     environment:
       TUNNEL_DNS_UPSTREAM: https://1.1.1.1/dns-query,https://1.0.0.1/dns-query
@@ -12,7 +12,7 @@ services:
     restart: unless-stopped
 
   pihole:
-    image: pihole/pihole:latest
+    image: pihole/pihole:2022.09.2
     volumes:
       - /home/earlopain/pihole/etc:/etc/pihole
       - ${SERVER_PROJECT_DIR}/pihole/custom.list:/etc/pihole/custom.list

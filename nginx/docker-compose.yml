@@ -2,7 +2,7 @@ version: "3"
 
 services:
   certbot:
-    image: certbot/dns-cloudflare
+    image: certbot/dns-cloudflare:v1.30.0
     command: renew
     volumes:
       - /home/earlopain/letsencrypt:/etc/letsencrypt
