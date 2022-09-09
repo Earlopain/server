@@ -15,7 +15,7 @@ services:
     image: pihole/pihole:latest
     volumes:
       - /home/earlopain/pihole/etc:/etc/pihole
-      - ${PWD}/pihole.custom.list:/etc/pihole/custom.list
+      - ${SERVER_PROJECT_DIR}/pihole/custom.list:/etc/pihole/custom.list
       - /home/earlopain/pihole/dnsmasq.d:/etc/dnsmasq.d
     cap_add:
       - NET_ADMIN
