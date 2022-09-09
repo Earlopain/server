@@ -6,7 +6,7 @@ services:
     command: renew
     volumes:
       - /home/earlopain/letsencrypt:/etc/letsencrypt
-      - ${PWD}/certbot_secrets.ini:/etc/letsencrypt/secrets.ini
+      - ${SERVER_PROJECT_DIR}/nginx/certbot_secrets.ini:/etc/letsencrypt/secrets.ini
     profiles:
       - certbot
 
@@ -17,4 +17,4 @@ services:
       - 443:443
     volumes:
       - /home/earlopain/letsencrypt:/etc/letsencrypt
-      - ${PWD}/nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ${SERVER_PROJECT_DIR}/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
