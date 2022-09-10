@@ -13,4 +13,3 @@ services:
       - ${HOME}:/home/coder
     ports:
       - 8443:8443
-    restart: unless-stopped
