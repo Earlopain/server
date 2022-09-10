@@ -18,3 +18,4 @@ services:
     volumes:
       - /home/earlopain/letsencrypt:/etc/letsencrypt
       - ${SERVER_PROJECT_DIR}/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+    restart: unless-stopped
