@@ -23,6 +23,14 @@ sudo systemctl enable systemd-networkd
 sudo systemctl start systemd-networkd
 sudo reboot now
 
+# Firewall
+sudo firewall-cmd --permanent --add-port=53/tcp
+sudo firewall-cmd --permanent --add-port=53/udp
+sudo firewall-cmd --permanent --add-port=67/tcp
+sudo firewall-cmd --permanent --add-port=67/udp
+sudo firewall-cmd --reload
+
+
 # Git signing keys
 gpg --homedir /path/to/old/.gnupg --output ~/private.key --armor --export-secret-key 2B41C3E14D2536AD
 gpg --homedir /path/to/old/.gnupg --output ~/public.key --armor --export 2B41C3E14D2536AD
