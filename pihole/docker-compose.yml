@@ -14,9 +14,9 @@ services:
   pihole:
     image: pihole/pihole:2022.09.2
     volumes:
-      - /home/earlopain/pihole/etc:/etc/pihole
+      - ${FOLDER_1}/pihole/etc:/etc/pihole
+      - ${FOLDER_1}/pihole/dnsmasq.d:/etc/dnsmasq.d
       - ${SERVER_PROJECT_DIR}/pihole/custom.list:/etc/pihole/custom.list
-      - /home/earlopain/pihole/dnsmasq.d:/etc/dnsmasq.d
     cap_add:
       - NET_ADMIN
     network_mode: host

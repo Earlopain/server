@@ -7,6 +7,8 @@ cp ./files/.bashrc ~/.bashrc
 source ~/.bashrc
 
 sudo sh -c 'echo "SERVER_PROJECT_DIR=/home/earlopain/server" >> /etc/environment'
+sudo sh -c 'echo "FOLDER_1=/home/earlopain" >> /etc/environment'
+sudo sh -c 'echo "FOLDER_2=/mnt/ssd" >> /etc/environment'
 
 # Docker
 yay docker

@@ -9,7 +9,7 @@ services:
       PORT: 8443
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /home/earlopain/code-server:/home/coder/.local/share/code-server
+      - ${FOLDER_2}/code-server:/home/coder/.local/share/code-server
       - ${HOME}:/home/coder
     ports:
       - 8443:8443

@@ -5,7 +5,7 @@ services:
     image: certbot/dns-cloudflare:v1.30.0
     command: renew
     volumes:
-      - /home/earlopain/letsencrypt:/etc/letsencrypt
+      - ${FOLDER_1}/letsencrypt:/etc/letsencrypt
       - ${SERVER_PROJECT_DIR}/nginx/certbot_secrets.ini:/etc/letsencrypt/secrets.ini
     profiles:
       - certbot
@@ -16,6 +16,6 @@ services:
     ports:
       - 443:443
     volumes:
-      - /home/earlopain/letsencrypt:/etc/letsencrypt
+      - ${FOLDER_1}/letsencrypt:/etc/letsencrypt
       - ${SERVER_PROJECT_DIR}/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
     restart: unless-stopped
