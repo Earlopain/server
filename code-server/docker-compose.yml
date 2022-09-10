@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  code-server:
+    build: ./
+    environment:
+      EXTENSIONS_GALLERY: '{"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery", "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index", "itemUrl": "https://marketplace.visualstudio.com/items"}'
+      PASSWORD: ${CODE_SERVER_PASSWORD}
+      PORT: 8443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /home/earlopain/code-server:/home/coder/.local/share/code-server
+      - ${HOME}:/home/coder
+    ports:
+      - 8443:8443
+    restart: unless-stopped
