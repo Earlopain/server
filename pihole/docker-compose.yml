@@ -25,7 +25,10 @@ services:
       WEBPASSWORD: ${PIHOLE_WEBPASSWORD}
       WEB_PORT: 8081
       PIHOLE_DNS_: 127.0.0.1#5053
+      PIHOLE_DOMAIN: earlopain.dev
       DNSSEC: false
+      DNS_BOGUS_PRIV: true
+      DNS_FQDN_REQUIRED: true
       DNSMASQ_LISTENING: local
       FTLCONF_DBINTERVAL: 60
       FTLCONF_LOCAL_IPV4: 192.168.178.50
