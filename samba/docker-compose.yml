@@ -5,6 +5,8 @@ services:
     image: dperson/samba
     environment:
       USER: ${SAMBA_USER};${SAMBA_PASS}
+      USERID: 1000
+      GROUPID: 1000
       SHARE1: server_home;/share1;no;no;no;${SAMBA_USER}
       SHARE2: server_ssd;/share2;no;no;no;${SAMBA_USER}
     ports:
