@@ -2,7 +2,7 @@ version: "3"
 
 services:
   certbot:
-    image: certbot/dns-cloudflare:v1.30.0
+    image: certbot/dns-cloudflare:v1.31.0
     command: renew
     volumes:
       - ${FOLDER_1}/letsencrypt:/etc/letsencrypt
@@ -11,7 +11,7 @@ services:
       - certbot
 
   nginx:
-    image: nginx:1.23-alpine
+    image: nginx:1.23.1-alpine
     container_name: server_nginx
     ports:
       - 443:443
