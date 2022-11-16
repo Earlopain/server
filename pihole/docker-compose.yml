@@ -21,7 +21,7 @@ services:
       - NET_ADMIN
     network_mode: host
     environment:
-      VIRTUAL_HOST: pihole.server.lan
+      VIRTUAL_HOST: pihole.earlopain.dev
       WEBPASSWORD: ${PIHOLE_WEBPASSWORD}
       WEB_PORT: 8081
       PIHOLE_DNS_: 127.0.0.1#5053
