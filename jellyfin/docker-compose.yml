@@ -5,6 +5,7 @@ services:
     image: jellyfin/jellyfin:10.8.7
     environment:
       JELLYFIN_PublishedServerUrl: https://jellyfin.earlopain.dev
+    user: 1000:1000
     volumes:
       - ${FOLDER_2}/jellyfin/config:/config
       - ${FOLDER_2}/jellyfin/cache:/cache
