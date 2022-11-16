@@ -10,6 +10,6 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${FOLDER_2}/code-server:/home/coder/.local/share/code-server
-      - ${HOME}:/home/coder
+      - ${HOME}:/home/coder/host
     ports:
       - 8443:8443
