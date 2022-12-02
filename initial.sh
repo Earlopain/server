@@ -50,6 +50,7 @@ echo -n "Git email: "
 read git_email
 git config --global user.email $git_email
 git config --global init.defaultBranch master
+git config --global commit.gpgSign true
 ssh-keygen -t ed25519 -C $git_email
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
