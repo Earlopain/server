@@ -23,5 +23,6 @@ alias dcr='docker-compose run --rm'
 alias dcb='docker-compose build'
 alias dcu='docker-compose up'
 alias dcd='docker-compose down'
+alias dcl='docker-compose logs --tail 10 --follow'
 
 export GPG_TTY=$(tty)
