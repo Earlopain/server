@@ -16,7 +16,7 @@ alias cp='cp -i'
 
 alias ifconfig='ip addr'
 alias grub-update='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias mine='sudo chown earlopain:earlopain'
+alias mine='sudo chown $USER:$USER'
 alias unlock-key='echo "test" | gpg --clearsign > /dev/null'
 
 alias dcr='docker compose run --rm'
