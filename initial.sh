@@ -67,3 +67,9 @@ sudo sh -c 'echo "0 0 * * * earlopain docker-compose -f \$SERVER_PROJECT_DIR/ngi
 echo -n "ACME email: "
 read acme_email
 docker-compose -f $SERVER_PROJECT_DIR/nginx/docker-compose.yml run --rm certbot certonly --non-interactive --dns-cloudflare --agree-tos --dns-cloudflare-credentials /etc/letsencrypt/secrets.ini --email $acme_email -d earlopain.dev -d *.earlopain.dev --server https://acme-v02.api.letsencrypt.org/directory
+
+# SSH Agent
+cp files/ssh-agent.service ~/.config/systemd/user/
+echo 'AddKeysToAgent  yes' >> ~/.ssh/config
+chmod 600 ~/.ssh/config
+systemctl --user enable --now ssh-agent
