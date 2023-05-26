@@ -14,7 +14,6 @@ sudo sh -c 'echo "FOLDER_2=/mnt/ssd" >> /etc/environment'
 yay docker
 yay docker-compose
 sudo usermod -aG docker $USER
-docker run -d -p 9443:9443 --name portainer --restart=unless-stopped -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 
 # Network
 sudo systemctl stop dhcpcd
