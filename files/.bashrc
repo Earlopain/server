@@ -24,6 +24,7 @@ alias dcb='docker compose build'
 alias dcu='docker compose up'
 alias dcd='docker compose down'
 alias dcl='docker compose logs --tail 10 --follow'
+alias dcl='docker compose pull'
 
 export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
