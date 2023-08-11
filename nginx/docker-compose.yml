@@ -17,5 +17,5 @@ services:
       - 443:443
     volumes:
       - ${FOLDER_1}/letsencrypt:/etc/letsencrypt
-      - ${SERVER_PROJECT_DIR}/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ${SERVER_PROJECT_DIR}/nginx/config:/etc/nginx/conf.d
     restart: unless-stopped
