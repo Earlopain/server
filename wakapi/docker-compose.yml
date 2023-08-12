@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  wakapi:
+    image: ghcr.io/muety/wakapi:2.8.1
+    restart: unless-stopped
+    environment:
+      WAKAPI_PASSWORD_SALT: ${WAKAPI_PASSWORD_SALT}
+      WAKAPI_MAIL_ENABLED: "false"
+      WAKAPI_DISABLE_FRONTPAGE: "true"
+      WAKAPI_ALLOW_SIGNUP: "false"
+      WAKAPI_PUBLIC_URL: wakapi.earlopain.dev
+    user: 1000:1000
+    volumes:
+      - ${FOLDER_1}/wakapi:/data
+    ports:
+      - 9472:3000
