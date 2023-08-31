@@ -10,6 +10,7 @@ bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
 alias ls='ls --color=auto'
+alias ll='ls -lah'
 alias grep='grep --colour=auto'
 # Ask before overwriting
 alias cp='cp -i'
