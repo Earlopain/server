@@ -2,7 +2,7 @@ version: "3"
 
 services:
   jellyfin:
-    image: jellyfin/jellyfin:10.8.12
+    image: jellyfin/jellyfin:10.8.13
     environment:
       JELLYFIN_PublishedServerUrl: https://jellyfin.earlopain.dev
     user: 1000:1000
