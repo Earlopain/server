@@ -27,5 +27,9 @@ alias dcd='docker compose down'
 alias dcl='docker compose logs --tail 10 --follow'
 alias dcl='docker compose pull'
 
+git-rebase(){
+  git rebase -i --committer-date-is-author-date HEAD~$1
+}
+
 export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
