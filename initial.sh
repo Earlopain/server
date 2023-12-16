@@ -62,7 +62,7 @@ sudo systemctl enable cronie
 sudo systemctl start cronie
 sudo cat > /etc/crontab <<EOL
 0 0 * * SAT earlopain docker compose -f \$SERVER_PROJECT_DIR/nginx/docker-compose.yml run --rm certbot
-0 1 * * SAT earlopain docker exec -it server_nginx nginx -s reload
+0 1 * * SAT earlopain docker exec server_nginx nginx -s reload
 EOL
 
 # ssl certs initial setup
