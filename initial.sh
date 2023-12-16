@@ -60,12 +60,12 @@ cat ~/.ssh/id_ed25519.pub
 yay cronie
 sudo systemctl enable cronie
 sudo systemctl start cronie
-sudo sh -c 'echo "0 0 * * * earlopain docker-compose -f \$SERVER_PROJECT_DIR/nginx/docker-compose.yml run --rm certbot && docker exec -it server_nginx nginx -s reload" >> /etc/crontab'
+sudo sh -c 'echo "0 0 * * * earlopain docker compose -f \$SERVER_PROJECT_DIR/nginx/docker-compose.yml run --rm certbot && docker exec -it server_nginx nginx -s reload" >> /etc/crontab'
 
 # ssl certs initial setup
 echo -n "ACME email: "
 read acme_email
-docker-compose -f $SERVER_PROJECT_DIR/nginx/docker-compose.yml run --rm certbot certonly --non-interactive --dns-cloudflare --agree-tos --dns-cloudflare-credentials /etc/letsencrypt/secrets.ini --email $acme_email -d earlopain.dev -d *.earlopain.dev --server https://acme-v02.api.letsencrypt.org/directory
+docker compose -f $SERVER_PROJECT_DIR/nginx/docker-compose.yml run --rm certbot certonly --non-interactive --dns-cloudflare --agree-tos --dns-cloudflare-credentials /etc/letsencrypt/secrets.ini --email $acme_email -d earlopain.dev -d *.earlopain.dev --server https://acme-v02.api.letsencrypt.org/directory
 
 # SSH Agent
 cp files/ssh-agent.service ~/.config/systemd/user/
