@@ -60,7 +60,10 @@ cat ~/.ssh/id_ed25519.pub
 yay cronie
 sudo systemctl enable cronie
 sudo systemctl start cronie
-sudo sh -c 'echo "0 0 * * * earlopain docker compose -f \$SERVER_PROJECT_DIR/nginx/docker-compose.yml run --rm certbot && docker exec -it server_nginx nginx -s reload" >> /etc/crontab'
+sudo cat > /etc/crontab <<EOL
+0 0 * * SAT earlopain docker compose -f \$SERVER_PROJECT_DIR/nginx/docker-compose.yml run --rm certbot
+0 1 * * SAT earlopain docker exec -it server_nginx nginx -s reload
+EOL
 
 # ssl certs initial setup
 echo -n "ACME email: "
