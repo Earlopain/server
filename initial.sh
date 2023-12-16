@@ -60,7 +60,7 @@ cat ~/.ssh/id_ed25519.pub
 yay cronie
 sudo systemctl enable cronie
 sudo systemctl start cronie
-sudo cat > /etc/crontab <<EOL
+cat <<EOL | sudo tee /etc/crontab
 0 0 * * SAT earlopain docker compose -f \$SERVER_PROJECT_DIR/nginx/docker-compose.yml run --rm certbot
 0 1 * * SAT earlopain docker exec server_nginx nginx -s reload
 EOL
