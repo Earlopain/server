@@ -33,3 +33,5 @@ git-rebase(){
 
 export GPG_TTY=$(tty)
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+eval "$(rbenv init - bash)"

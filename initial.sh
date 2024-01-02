@@ -75,3 +75,7 @@ cp files/ssh-agent.service ~/.config/systemd/user/
 echo 'AddKeysToAgent  yes' >> ~/.ssh/config
 chmod 600 ~/.ssh/config
 systemctl --user enable --now ssh-agent
+
+# Ruby
+yay rbenv ruby-build
+rbenv global 3.0.0
