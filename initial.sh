@@ -11,8 +11,7 @@ sudo sh -c 'echo "FOLDER_1=/home/earlopain" >> /etc/environment'
 sudo sh -c 'echo "FOLDER_2=/mnt/ssd" >> /etc/environment'
 
 # Docker
-yay docker
-yay docker-compose
+pacman -S docker docker-compose docker-buildx
 sudo usermod -aG docker $USER
 
 # Network
