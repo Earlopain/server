@@ -11,7 +11,7 @@ services:
       - certbot
 
   nginx:
-    image: nginx:1.25.3-alpine
+    image: nginx:1.25.4-alpine
     container_name: server_nginx
     ports:
       - 443:443
