@@ -2,7 +2,7 @@ version: "3"
 
 services:
   cloudflared:
-    image: cloudflare/cloudflared:2024.3.0-amd64
+    image: cloudflare/cloudflared:2024.4.0-amd64
     command: proxy-dns
     environment:
       TUNNEL_DNS_UPSTREAM: https://1.1.1.1/dns-query,https://1.0.0.1/dns-query
