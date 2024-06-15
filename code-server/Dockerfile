@@ -1,4 +1,4 @@
-FROM codercom/code-server:4.89.1
+FROM codercom/code-server:4.90.2
 
 RUN sudo curl -SL https://github.com/docker/compose/releases/download/v2.24.1/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 RUN sudo chmod +x /usr/local/bin/docker-compose
