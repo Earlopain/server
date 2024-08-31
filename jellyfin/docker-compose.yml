@@ -1,6 +1,6 @@
 services:
   jellyfin:
-    image: jellyfin/jellyfin:10.9.9
+    image: jellyfin/jellyfin:10.9.10
     environment:
       JELLYFIN_PublishedServerUrl: https://jellyfin.earlopain.dev
     user: 1000:1000
