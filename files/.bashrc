@@ -22,7 +22,7 @@ alias unlock-key='echo "test" | gpg --clearsign > /dev/null'
 
 alias dcr='docker compose run --rm'
 alias dcb='docker compose build'
-alias dcu='docker compose up'
+alias dcu='docker compose up --menu=false'
 alias dcd='docker compose down'
 alias dcl='docker compose logs --tail 10 --follow'
 alias dcl='docker compose pull'
