@@ -1,6 +1,6 @@
 services:
   certbot:
-    image: certbot/dns-cloudflare:v3.0.1
+    image: certbot/dns-cloudflare:v3.1.0
     command: renew
     volumes:
       - ${FOLDER_1}/letsencrypt:/etc/letsencrypt
