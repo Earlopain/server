@@ -4,9 +4,6 @@ services:
     ports:
       - 8082:8082
     volumes:
-      - data:/opt/traccar/data
+      - ${FOLDER_1}/traccar:/opt/traccar/data
       - ./traccar.xml:/opt/traccar/conf/traccar.xml
     restart: unless-stopped
-
-volumes:
-  data:
