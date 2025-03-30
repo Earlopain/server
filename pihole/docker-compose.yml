@@ -10,31 +10,29 @@ services:
     restart: unless-stopped
 
   pihole:
-    image: pihole/pihole:2024.07.0
+    image: pihole/pihole:2025.03.1
     volumes:
       - ${FOLDER_1}/pihole/etc:/etc/pihole
-      - ${FOLDER_1}/pihole/dnsmasq.d:/etc/dnsmasq.d
       - ${SERVER_PROJECT_DIR}/pihole/custom.list:/etc/pihole/custom.list
     cap_add:
       - NET_ADMIN
     network_mode: host
     environment:
-      VIRTUAL_HOST: pihole.earlopain.dev
-      WEBPASSWORD: ${PIHOLE_WEBPASSWORD}
-      WEB_PORT: 8081
-      PIHOLE_DNS_: 127.0.0.1#5053
-      PIHOLE_DOMAIN: earlopain.dev
-      DNSSEC: false
-      DNS_BOGUS_PRIV: true
-      DNS_FQDN_REQUIRED: true
-      DNSMASQ_LISTENING: local
-      FTLCONF_DBINTERVAL: 60
-      FTLCONF_LOCAL_IPV4: 192.168.178.50
-      DHCP_ACTIVE: true
-      DHCP_START: 192.168.178.151
-      DHCP_END: 192.168.178.251
-      DHCP_ROUTER: 192.168.178.1
-      DHCP_LEASETIME: 744
+      FTLCONF_webserver_api_password: ${PIHOLE_WEBPASSWORD}
+      FTLCONF_webserver_port: 8081
+      FTLCONF_dns_upstreams: 127.0.0.1#5053
+      FTLCONF_dns_domain: earlopain.dev
+      FTLCONF_dns_dnssec: false
+      FTLCONF_dns_bogusPriv: true
+      FTLCONF_dns_domainNeeded: true
+      FTLCONF_dns_listeningMode: local
+      FTLCONF_dns_reply_host_IPv4: 192.168.178.50
+      FTLCONF_dhcp_active: true
+      FTLCONF_dhcp_start: 192.168.178.151
+      FTLCONF_dhcp_end: 192.168.178.251
+      FTLCONF_dhcp_router: 192.168.178.1
+      FTLCONF_dhcp_leaseTime: 744
+      FTLCONF_misc_dnsmasq_lines: no-0x20-encode
     depends_on:
       - cloudflared
     restart: unless-stopped
