@@ -9,6 +9,8 @@
     <entry key='database.user'>sa</entry>
     <entry key='database.password'></entry>
 
+    <entry key='report.fastThreshold'>864000000</entry>
+
     <entry key='logger.console'>true</entry>
     <entry key='geocoder.enable'>false</entry>
     <entry key='server.statistics'></entry>
