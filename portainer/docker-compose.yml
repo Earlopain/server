@@ -1,6 +1,6 @@
 services:
   portainer:
-    image: portainer/portainer-ce:2.29.0
+    image: portainer/portainer-ce:2.29.2
     ports:
       - 9443:9443
     volumes:
