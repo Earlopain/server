@@ -10,7 +10,7 @@ services:
     restart: unless-stopped
 
   pihole:
-    image: pihole/pihole:2025.05.0
+    image: pihole/pihole:2025.05.1
     volumes:
       - ${FOLDER_1}/pihole/etc:/etc/pihole
       - ${SERVER_PROJECT_DIR}/pihole/custom.list:/etc/pihole/custom.list
