@@ -1,6 +1,6 @@
 services:
   traccar:
-    image: traccar/traccar:6.7.1-alpine
+    image: traccar/traccar:6.7.2-alpine
     ports:
       - 8082:8082
     volumes:
