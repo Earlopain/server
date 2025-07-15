@@ -6,7 +6,6 @@ exit
 cp ./files/.bashrc ~/.bashrc
 source ~/.bashrc
 
-sudo sh -c 'echo "SERVER_PROJECT_DIR=/home/earlopain/server" >> /etc/environment'
 sudo sh -c 'echo "FOLDER_1=/home/earlopain" >> /etc/environment'
 sudo sh -c 'echo "FOLDER_2=/mnt/ssd" >> /etc/environment'
 
@@ -60,14 +59,14 @@ yay cronie
 sudo systemctl enable cronie
 sudo systemctl start cronie
 cat <<EOL | sudo tee /etc/crontab
-0 0 * * SAT earlopain docker compose -f \$SERVER_PROJECT_DIR/nginx/docker-compose.yml run --rm certbot
+0 0 * * SAT earlopain docker compose -f /home/earlopain/server/nginx/docker-compose.yml run --rm certbot
 0 1 * * SAT earlopain docker exec server_nginx nginx -s reload
 EOL
 
 # ssl certs initial setup
 echo -n "ACME email: "
 read acme_email
-docker compose -f $SERVER_PROJECT_DIR/nginx/docker-compose.yml run --rm certbot certonly --non-interactive --dns-cloudflare --agree-tos --dns-cloudflare-credentials /etc/letsencrypt/secrets.ini --email $acme_email -d earlopain.dev -d *.earlopain.dev --server https://acme-v02.api.letsencrypt.org/directory
+docker compose -f ./nginx/docker-compose.yml run --rm certbot certonly --non-interactive --dns-cloudflare --agree-tos --dns-cloudflare-credentials /etc/letsencrypt/secrets.ini --email $acme_email -d earlopain.dev -d *.earlopain.dev --server https://acme-v02.api.letsencrypt.org/directory
 
 # SSH Agent
 cp files/ssh-agent.service ~/.config/systemd/user/

@@ -4,7 +4,7 @@ services:
     command: renew
     volumes:
       - ${FOLDER_1}/letsencrypt:/etc/letsencrypt
-      - ${SERVER_PROJECT_DIR}/nginx/certbot_secrets.ini:/etc/letsencrypt/secrets.ini
+      - ./certbot_secrets.ini:/etc/letsencrypt/secrets.ini
     profiles:
       - certbot
 
@@ -15,5 +15,5 @@ services:
       - 443:443
     volumes:
       - ${FOLDER_1}/letsencrypt:/etc/letsencrypt
-      - ${SERVER_PROJECT_DIR}/nginx/config:/etc/nginx/conf.d
+      - ./config:/etc/nginx/conf.d
     restart: unless-stopped
