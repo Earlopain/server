@@ -18,7 +18,7 @@ services:
       - NET_ADMIN
     network_mode: host
     environment:
-      FTLCONF_webserver_api_password: ${PIHOLE_WEBPASSWORD}
+      FTLCONF_webserver_api_password: ${PIHOLE_WEBPASSWORD:?}
       FTLCONF_webserver_port: 8081
       FTLCONF_dns_upstreams: 127.0.0.1#5053
       FTLCONF_dns_domain: earlopain.dev

@@ -3,7 +3,7 @@ services:
     image: ghcr.io/muety/wakapi:2.14.0
     restart: unless-stopped
     environment:
-      WAKAPI_PASSWORD_SALT: ${WAKAPI_PASSWORD_SALT}
+      WAKAPI_PASSWORD_SALT: ${WAKAPI_PASSWORD_SALT:?}
       WAKAPI_MAIL_ENABLED: "false"
       WAKAPI_DISABLE_FRONTPAGE: "true"
       WAKAPI_ALLOW_SIGNUP: "false"
