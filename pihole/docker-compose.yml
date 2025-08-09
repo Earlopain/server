@@ -10,7 +10,7 @@ services:
     restart: unless-stopped
 
   pihole:
-    image: pihole/pihole:2025.07.1
+    image: pihole/pihole:2025.08.0
     volumes:
       - ${FOLDER_1}/pihole/etc:/etc/pihole
       - ./custom.list:/etc/pihole/custom.list
