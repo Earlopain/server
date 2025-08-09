@@ -32,7 +32,7 @@ services:
       - --hide-scrollbars
 
   meilisearch:
-    image: getmeili/meilisearch:v1.15.2
+    image: getmeili/meilisearch:v1.16.0
     environment:
       MEILI_NO_ANALYTICS: true
     volumes:
