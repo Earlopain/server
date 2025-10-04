@@ -1,7 +1,7 @@
 services:
   immich-server:
     container_name: immich_server
-    image: ghcr.io/immich-app/immich-server:v2.0.0
+    image: ghcr.io/immich-app/immich-server:v2.0.1
     volumes:
       - ${FOLDER_2}/immich/data:/data
       - /etc/localtime:/etc/localtime:ro
