@@ -1,6 +1,6 @@
 services:
   web:
-    image: ghcr.io/karakeep-app/karakeep:0.27.1
+    image: ghcr.io/karakeep-app/karakeep:0.28.0
     environment:
       DISABLE_SIGNUPS: true
       MAX_ASSET_SIZE_MB: 500
