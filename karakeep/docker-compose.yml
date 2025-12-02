@@ -17,7 +17,6 @@ services:
       - $FOLDER_2/karakeep:/data
     ports:
       - 8751:3000
-    restart: unless-stopped
 
   meilisearch:
     image: getmeili/meilisearch:v1.27.0
