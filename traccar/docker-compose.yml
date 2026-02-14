@@ -15,7 +15,7 @@ services:
     restart: unless-stopped
 
   postgres:
-    image: postgres:18.1-alpine
+    image: postgres:18.2-alpine
     environment:
       POSTGRES_DB: traccar
       POSTGRES_USER: traccar
