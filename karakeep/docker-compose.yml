@@ -19,7 +19,7 @@ services:
       - 8751:3000
 
   meilisearch:
-    image: getmeili/meilisearch:v1.35.0
+    image: getmeili/meilisearch:v1.35.1
     environment:
       MEILI_NO_ANALYTICS: true
     volumes:
