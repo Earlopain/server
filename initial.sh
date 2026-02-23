@@ -74,6 +74,12 @@ echo 'AddKeysToAgent  yes' >> ~/.ssh/config
 chmod 600 ~/.ssh/config
 systemctl --user enable --now ssh-agent
 
-# Ruby
-yay rbenv ruby-build
-rbenv global 3.0.0
+# dnscrypt-proxy
+yay dnscrypt-proxy
+sudo cp files/dnscrypt-proxy-override.conf /etc/systemd/system/dnscrypt-proxy.socket.d/override.conf
+sudo systemctl daemon-reload
+sudo nano /etc/dnscrypt-proxy/dnscrypt-proxy.toml
+# server_names = ['cloudflare']
+# listen_addresses = []
+sudo systemctl enable dnscrypt-proxy.socket
+sudo systemctl enable dnscrypt-proxy.service
