@@ -1,14 +1,4 @@
 services:
-  cloudflared:
-    image: cloudflare/cloudflared:2026.2.0-amd64
-    command: proxy-dns
-    environment:
-      TUNNEL_DNS_UPSTREAM: https://1.1.1.1/dns-query,https://1.0.0.1/dns-query
-      TUNNEL_DNS_PORT: 5053
-      TUNNEL_DNS_ADDRESS: 0.0.0.0
-    network_mode: host
-    restart: unless-stopped
-
   pihole:
     image: pihole/pihole:2026.02.0
     volumes:
@@ -33,6 +23,4 @@ services:
       FTLCONF_dhcp_router: 192.168.178.1
       FTLCONF_dhcp_leaseTime: 744
       FTLCONF_misc_dnsmasq_lines: no-0x20-encode
-    depends_on:
-      - cloudflared
     restart: unless-stopped

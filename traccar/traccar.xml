@@ -5,6 +5,8 @@
     <!-- Documentation: https://www.traccar.org/configuration-file/ -->
 
     <entry key='report.fastThreshold'>864000000</entry>
+    <entry key='osmand.minAccuracy'>-1</entry>
+    <entry key='report.trip.newLogic'>false</entry>
 
     <entry key='logger.console'>true</entry>
     <entry key='geocoder.enable'>false</entry>
