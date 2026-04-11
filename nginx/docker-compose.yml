@@ -9,7 +9,7 @@ services:
       - certbot
 
   nginx:
-    image: nginx:1.29.7-alpine
+    image: nginx:1.29.8-alpine
     container_name: server_nginx
     ports:
       - 443:443
