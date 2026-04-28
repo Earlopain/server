@@ -83,3 +83,10 @@ sudo nano /etc/dnscrypt-proxy/dnscrypt-proxy.toml
 # listen_addresses = []
 sudo systemctl enable dnscrypt-proxy.socket
 sudo systemctl enable dnscrypt-proxy.service
+
+# Authenticated Origin Pulls (Cloudflare)
+# https://developers.cloudflare.com/ssl/origin-configuration/authenticated-origin-pull/set-up/zone-level/
+openssl genrsa -aes256 -out rootca.key 4096
+openssl req -x509 -new -nodes -key rootca.key -sha256 -days 1826 -out rootca.crt
+openssl req -new -nodes -out cert.csr -newkey rsa:4096 -keyout cert.key
+openssl x509 -req -in cert.csr -CA rootca.crt -CAkey rootca.key -CAcreateserial -out cert.crt -days 730 -sha256 -extfile ./cert.v3.ext

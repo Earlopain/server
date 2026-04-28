@@ -1,1 +1,7 @@
 letsencrypt/
+cert.crt
+cert.csr
+cert.key
+rootca.key
+config/rootca.crt
+rootca.srl
