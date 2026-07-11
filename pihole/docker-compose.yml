@@ -1,6 +1,6 @@
 services:
   pihole:
-    image: pihole/pihole:2026.06.0
+    image: pihole/pihole:2026.07.2
     volumes:
       - ${FOLDER_1}/pihole/etc:/etc/pihole
       - ./custom.list:/etc/pihole/custom.list
